@@ -1,0 +1,18 @@
+info:
+  name: Metabase Presto Driver
+  version: 1.0.0-SNAPSHOT
+  description: Allows Metabase to connect to Presto databases.
+driver:
+  name: treasuredata
+  display-name: treasuredata
+  lazy-load: true
+  parent: sql
+  connection-properties:
+    - name: api-key
+      display-name: api-key
+      placeholder: your read only key
+      required: true
+  connection-properties-include-tunnel-config: true
+init:
+  - step: load-namespace
+    namespace: metabase.driver.treasuredata
